@@ -15,22 +15,25 @@ struct RecipesListView: View {
     @State private var searchText = ""
     @Query(sort: \SavedRecipe.name, order: .reverse) private var savedRecipe: [SavedRecipe]
 
-    var filteredRecipes: [Recipes] {
+    var filteredRecipes: [Recipe] {
         if searchText.isEmpty || searchText.count < 2 {
             recipesListViewModel.recipes
         } else {
             recipesListViewModel.recipes.filter {
-                $0.recipes[0].name.localizedStandardContains(searchText)
+                $0.name.localizedStandardContains(searchText)
             }
         }
     }
     
     var body: some View {
         NavigationStack {
-            List {
+            List(filteredRecipes) { recipesArray in
+                Section {
+                    RecipeView(cuisineType: recipesArray.cuisine, cuisineName: recipesArray.name, cuisineLargeImage: recipesArray.photo_url_large ?? "", cuisineSmallImage: recipesArray.photo_url_small ?? "", youtubeURL: recipesArray.youtube_url ?? "", isBookmarked: false)
+                }
             }
             .listSectionSpacing(.custom(10))
-            .navigationTitle("Search")
+            .navigationTitle("Recipes")
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchText)
             .onAppear {

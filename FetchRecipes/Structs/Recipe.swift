@@ -11,7 +11,7 @@ struct Recipes: Decodable {
     let recipes: [Recipe]
 }
 
-struct Recipe: Decodable {
+struct Recipe: Decodable, Identifiable {
     enum RecipeURLStringType {
         case success
         case malformed

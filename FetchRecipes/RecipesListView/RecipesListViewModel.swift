@@ -9,7 +9,7 @@ import Foundation
 
 @MainActor class RecipesListViewModel: ObservableObject {
     
-    @Published var recipes = [Recipes]()
+    @Published var recipes: [Recipe] = []
     
     func getAllRecipes(urlType: Recipe.RecipeURLStringType) {
         let urlString = ""
@@ -21,7 +21,7 @@ import Foundation
             case .success(let recipe):
                 DispatchQueue.main.async {
                     print(recipe)
-                    self.recipes = [recipe]
+                    self.recipes = recipe.recipes
                 }
             case .failure(let error):
                 print(error)
