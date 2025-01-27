@@ -7,7 +7,17 @@
 
 import Foundation
 
-struct Recipe: Decodable, Identifiable {
+struct Recipes: Decodable {
+    let recipes: [Recipe]
+}
+
+struct Recipe: Decodable {
+    enum RecipeURLStringType {
+        case success
+        case malformed
+        case empty
+    }
+    
     var id = UUID().uuidString
     
     let cuisine: String
