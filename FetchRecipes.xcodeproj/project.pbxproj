@@ -27,6 +27,7 @@
 		663A34372D47F13F006A00AC /* FetchRecipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchRecipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		663A34492D47F140006A00AC /* FetchRecipesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchRecipesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		663A34532D47F140006A00AC /* FetchRecipesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchRecipesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		66B895632D497DDA004BB865 /* FetchRecipes.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = FetchRecipes.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +76,7 @@
 		663A342E2D47F13F006A00AC = {
 			isa = PBXGroup;
 			children = (
+				66B895632D497DDA004BB865 /* FetchRecipes.xctestplan */,
 				663A34392D47F13F006A00AC /* FetchRecipes */,
 				663A344C2D47F140006A00AC /* FetchRecipesTests */,
 				663A34562D47F140006A00AC /* FetchRecipesUITests */,
