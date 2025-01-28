@@ -18,10 +18,10 @@ struct RecipesListView: View {
     @State private var searchText = ""
     @State var isEmpty = false
     @State var isBookmarked = false
-
+    
     // MARK: QUERY
     @Query(sort: \SavedRecipe.name, order: .reverse) private var savedRecipe: [SavedRecipe]
-
+    
     var filteredRecipes: [Recipe] {
         if searchText.isEmpty || searchText.count < 2 {
             recipesListViewModel.recipes
@@ -31,7 +31,7 @@ struct RecipesListView: View {
             }
         }
     }
-        
+    
     // MARK: VIEW
     var body: some View {
         NavigationStack {
@@ -75,7 +75,7 @@ struct RecipesListView: View {
                 showAlert = true
             }
         }
-
+        
     }
     
     // MARK: ACTION SHEET
