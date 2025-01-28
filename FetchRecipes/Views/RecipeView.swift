@@ -36,18 +36,15 @@ struct RecipeView: View {
                         .font(.subheadline)
                         .lineLimit(2)
                 }
+                
                 Spacer()
                 
-                VStack {
-                    Image(systemName: "bookmark.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 25, height: 25)
-                    .foregroundColor(.blue)
-                    .opacity(isBookmarked ? 1 : 0)
-                    
-                    Spacer()
-                }
+                Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 25, height: 25)
+                .foregroundColor(.blue)
+                .opacity(isBookmarked ? 1 : 0)
             }
             .navigationBarTitleDisplayMode(.inline)
     }
@@ -55,6 +52,6 @@ struct RecipeView: View {
 
 struct RecipeView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeView(cuisineType: "Malaysian", cuisineName: "Apam Balik", cuisineLargeImage: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b9ab0071-b281-4bee-b361-ec340d405320/large.jpg", cuisineSmallImage: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b9ab0071-b281-4bee-b361-ec340d405320/small.jpg", youtubeURL: "", isBookmarked: false)
+        RecipeView(cuisineType: "Malaysian", cuisineName: "Apam Balik", cuisineLargeImage: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b9ab0071-b281-4bee-b361-ec340d405320/large.jpg", cuisineSmallImage: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b9ab0071-b281-4bee-b361-ec340d405320/small.jpg", youtubeURL: "", isBookmarked: true)
     }
 }

@@ -10,7 +10,6 @@ import Foundation
 @MainActor class RecipesListViewModel: ObservableObject {
     
     @Published var recipes: [Recipe] = []
-    @Published var hasValues: Bool = false
     
     func getAllRecipes(urlType: Recipe.RecipeURLStringType) {
         self.recipes = []
@@ -22,9 +21,8 @@ import Foundation
                 switch result {
                 case .success(let recipe):
                     self.recipes = recipe.recipes
-                    self.hasValues = self.recipes.isEmpty ? false : true
                 case .failure(_):
-                    self.hasValues = false
+                    return
                 }
                 
             }
