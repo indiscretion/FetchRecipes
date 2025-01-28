@@ -1,9 +1,11 @@
 ### Fetch Recipes
 ________________
 
-### Summary: This is a tab bar application built for search functionality and saving your favorites using SwiftData
+### Summary
+This is a tab bar application designed to download and display Recipe data. The application includes search functionality and saving your favorite recipes.
 
-https://github.com/user-attachments/assets/89f71d63-0e39-4525-a959-5520a587e099
+https://github.com/user-attachments/assets/0d10d212-6ca8-42b5-918c-d432f1392006
+
 
 ### Focus Areas: What specific areas of the project did you prioritize? Why did you choose to focus on these areas?
 
@@ -23,5 +25,8 @@ The weakest part of my project is testing. SwiftData is tricky to test compared 
 
 ### Additional Information: Is there anything else we should know? Feel free to share any insights or constraints you encountered.
 
-I really enjoyed working on this project. My biggest insight is SwiftData is much more efficient than using CoreData
+I really enjoyed working on this project. My biggest insight is SwiftData is much more efficient than using CoreData and I would highly suggest using SwiftData for local storage.
+
+
+
 
