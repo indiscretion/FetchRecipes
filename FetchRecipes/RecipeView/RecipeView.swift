@@ -16,45 +16,40 @@ struct RecipeView: View {
     var isBookmarked: Bool = false
     
     var body: some View {
-        HStack {
-            AsyncImage(url: URL(string: cuisineLargeImage)) { result in
+            HStack {
+                AsyncImage(url: URL(string: cuisineLargeImage)) { result in
+                    
+                    result.image?
+                        .resizable()
+                        .scaledToFit()
+                    
+                }
+                .frame(width: 50, height: 50)
                 
-                result.image?
+                VStack(alignment: .leading) {
+                    Text(cuisineName)
+                        .font(.headline)
+                        .bold()
+                        .lineLimit(2)
+                    
+                    Text(cuisineType)
+                        .font(.subheadline)
+                        .lineLimit(2)
+                }
+                Spacer()
+                
+                VStack {
+                    Image(systemName: "bookmark.fill")
                     .resizable()
                     .scaledToFit()
-                
+                    .frame(width: 25, height: 25)
+                    .foregroundColor(.blue)
+                    .opacity(isBookmarked ? 1 : 0)
+                    
+                    Spacer()
+                }
             }
-            .frame(width: 50, height: 50)
-            
-            VStack(alignment: .leading) {
-                Text(cuisineName)
-                    .font(.headline)
-                    .bold()
-                    .lineLimit(2)
-                
-                Text(cuisineType)
-                    .font(.subheadline)
-                    .lineLimit(2)
-                
-//                Text(capital)
-//                    .font(.caption)
-//                    .foregroundStyle(.gray)
-//                    .lineLimit(2)
-            }
-            Spacer()
-            
-            VStack {
-                Image(systemName: "bookmark.fill")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 25, height: 25)
-                .foregroundColor(.blue)
-                .opacity(isBookmarked ? 1 : 0)
-                
-                Spacer()
-            }
-        }
-        .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.inline)
     }
 }
 
